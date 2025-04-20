@@ -85,3 +85,15 @@ backend/app/db/__pycache__/
 backend/app/models/__pycache__/
 backend/app/schemas/__pycache__/
 
+# SSL-related files
+fix_ssl.py
+install_certificates.py
+install_macos_certificates.py
+run_app_with_ssl_disabled.py
+run_with_ssl_disabled.sh
+test_ssl_fix.py
+*.pem
+*.crt
+*.key
+*.cer
+
