@@ -97,3 +97,7 @@ test_ssl_fix.py
 *.key
 *.cer
 
+# Utility scripts
+copy_code.py
+analyze_directory.py
+
