@@ -1,0 +1,126 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <style>
+    .entity { fill: white; stroke: #4285f4; stroke-width: 2; rx: 10; ry: 10; }
+    .student-entity { fill: #e8f0fe; stroke: #4285f4; stroke-width: 2; rx: 10; ry: 10; }
+    .senior-entity { fill: #fef7e0; stroke: #fbbc04; stroke-width: 2; rx: 10; ry: 10; }
+    .task-entity { fill: #e6f4ea; stroke: #34a853; stroke-width: 2; rx: 10; ry: 10; }
+    .application-entity { fill: #f8d7da; stroke: #ea4335; stroke-width: 2; rx: 10; ry: 10; }
+    .relation { stroke: #5f6368; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #202124; text-anchor: middle; }
+    .subtitle { font-family: Arial, sans-serif; font-size: 18px; fill: #5f6368; text-anchor: middle; }
+    .entity-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #202124; text-anchor: middle; }
+    .attribute { font-family: Arial, sans-serif; font-size: 12px; fill: #5f6368; text-anchor: start; }
+    .relation-label { font-family: Arial, sans-serif; font-size: 12px; fill: #5f6368; text-anchor: middle; }
+  </style>
+  
+  <!-- Arrow Marker -->
+  <defs>
+    <marker
+      id="arrowhead"
+      markerWidth="10"
+      markerHeight="7"
+      refX="9"
+      refY="3.5"
+      orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5f6368" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" class="title">Data Model</text>
+  <text x="400" y="70" class="subtitle">Senior-Student Volunteer Connection</text>
+  
+  <!-- User Entity -->
+  <rect x="300" y="100" width="200" height="150" class="entity" />
+  <text x="400" y="130" class="entity-title">User</text>
+  <line x1="320" y1="140" x2="480" y2="140" stroke="#4285f4" stroke-width="1" />
+  <text x="320" y="160" class="attribute">id: INTEGER (PK)</text>
+  <text x="320" y="180" class="attribute">email: STRING</text>
+  <text x="320" y="200" class="attribute">password: STRING</text>
+  <text x="320" y="220" class="attribute">user_type: ENUM</text>
+  <text x="320" y="240" class="attribute">created_at: DATETIME</text>
+  
+  <!-- Student Entity -->
+  <rect x="100" y="320" width="200" height="150" class="student-entity" />
+  <text x="200" y="350" class="entity-title">Student</text>
+  <line x1="120" y1="360" x2="280" y2="360" stroke="#4285f4" stroke-width="1" />
+  <text x="120" y="380" class="attribute">id: INTEGER (PK)</text>
+  <text x="120" y="400" class="attribute">user_id: INTEGER (FK)</text>
+  <text x="120" y="420" class="attribute">school_name: STRING</text>
+  <text x="120" y="440" class="attribute">skills: TEXT</text>
+  <text x="120" y="460" class="attribute">volunteer_hours: INTEGER</text>
+  
+  <!-- Senior Entity -->
+  <rect x="500" y="320" width="200" height="150" class="senior-entity" />
+  <text x="600" y="350" class="entity-title">Senior</text>
+  <line x1="520" y1="360" x2="680" y2="360" stroke="#fbbc04" stroke-width="1" />
+  <text x="520" y="380" class="attribute">id: INTEGER (PK)</text>
+  <text x="520" y="400" class="attribute">user_id: INTEGER (FK)</text>
+  <text x="520" y="420" class="attribute">address: STRING</text>
+  <text x="520" y="440" class="attribute">mobility_level: STRING</text>
+  <text x="520" y="460" class="attribute">emergency_contact: STRING</text>
+  
+  <!-- Task Entity -->
+  <rect x="500" y="100" width="200" height="150" class="task-entity" />
+  <text x="600" y="130" class="entity-title">Task</text>
+  <line x1="520" y1="140" x2="680" y2="140" stroke="#34a853" stroke-width="1" />
+  <text x="520" y="160" class="attribute">id: INTEGER (PK)</text>
+  <text x="520" y="180" class="attribute">senior_id: INTEGER (FK)</text>
+  <text x="520" y="200" class="attribute">title: STRING</text>
+  <text x="520" y="220" class="attribute">description: TEXT</text>
+  <text x="520" y="240" class="attribute">scheduled_time: DATETIME</text>
+  
+  <!-- Application Entity -->
+  <rect x="100" y="100" width="200" height="150" class="application-entity" />
+  <text x="200" y="130" class="entity-title">TaskApplication</text>
+  <line x1="120" y1="140" x2="280" y2="140" stroke="#ea4335" stroke-width="1" />
+  <text x="120" y="160" class="attribute">id: INTEGER (PK)</text>
+  <text x="120" y="180" class="attribute">task_id: INTEGER (FK)</text>
+  <text x="120" y="200" class="attribute">student_id: INTEGER (FK)</text>
+  <text x="120" y="220" class="attribute">status: ENUM</text>
+  <text x="120" y="240" class="attribute">created_at: DATETIME</text>
+  
+  <!-- Feedback Entity -->
+  <rect x="300" y="320" width="200" height="150" class="entity" />
+  <text x="400" y="350" class="entity-title">Feedback</text>
+  <line x1="320" y1="360" x2="480" y2="360" stroke="#4285f4" stroke-width="1" />
+  <text x="320" y="380" class="attribute">id: INTEGER (PK)</text>
+  <text x="320" y="400" class="attribute">task_id: INTEGER (FK)</text>
+  <text x="320" y="420" class="attribute">from_user_id: INTEGER (FK)</text>
+  <text x="320" y="440" class="attribute">to_user_id: INTEGER (FK)</text>
+  <text x="320" y="460" class="attribute">rating: INTEGER</text>
+  
+  <!-- Relationships -->
+  <!-- User to Student -->
+  <path d="M 300,175 L 200,175 L 200,320" class="relation" />
+  <text x="220" y="160" class="relation-label">1:1</text>
+  
+  <!-- User to Senior -->
+  <path d="M 500,175 L 600,175 L 600,320" class="relation" />
+  <text x="580" y="160" class="relation-label">1:1</text>
+  
+  <!-- Senior to Task -->
+  <path d="M 600,320 L 600,250" class="relation" />
+  <text x="620" y="285" class="relation-label">1:N</text>
+  
+  <!-- Student to TaskApplication -->
+  <path d="M 200,320 L 200,250" class="relation" />
+  <text x="220" y="285" class="relation-label">1:N</text>
+  
+  <!-- Task to TaskApplication -->
+  <path d="M 500,175 L 300,175" class="relation" />
+  <text x="400" y="160" class="relation-label">1:N</text>
+  
+  <!-- Task to Feedback -->
+  <path d="M 550,250 L 550,400 L 500,400" class="relation" />
+  <text x="535" y="380" class="relation-label">1:N</text>
+  
+  <!-- User to Feedback (from) -->
+  <path d="M 350,250 L 350,400" class="relation" />
+  <text x="330" y="300" class="relation-label">1:N</text>
+  
+  <!-- User to Feedback (to) -->
+  <path d="M 450,250 L 450,400" class="relation" />
+  <text x="470" y="300" class="relation-label">1:N</text>
+</svg>

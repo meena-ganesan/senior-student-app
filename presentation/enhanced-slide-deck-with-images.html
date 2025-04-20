@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior-Student Volunteer Connection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --primary-light: #e8f0fe;
+            --secondary-color: #34a853;
+            --secondary-light: #e6f4ea;
+            --accent-color: #fbbc04;
+            --accent-light: #fef7e0;
+            --error-color: #ea4335;
+            --text-color: #202124;
+            --text-light: #5f6368;
+        }
+        
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            font-size: 24px; /* Base font size increase for better visibility */
+        }
+        
+        .reveal h1, 
+        .reveal h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--primary-color);
+            text-transform: none;
+            font-size: 2.2em; /* Adjusted for better fit */
+            margin-bottom: 0.5em; /* Reduced spacing */
+        }
+        
+        .reveal h3 {
+            color: var(--secondary-color);
+            text-transform: none;
+            font-size: 1.5em; /* Adjusted for better fit */
+            margin-bottom: 0.3em; /* Reduced spacing */
+        }
+        
+        .reveal .slides {
+            text-align: left;
+            height: 100%; /* Ensure full height usage */
+        }
+        
+        .reveal .slides > section {
+            padding: 15px; /* Reduced padding */
+            height: 100%; /* Full height usage */
+            box-sizing: border-box; /* Include padding in height calculation */
+            overflow: hidden; /* Prevent content overflow */
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .title-slide h1 {
+            margin-bottom: 10px; /* Reduced spacing */
+        }
+        
+        .title-slide h2 {
+            color: var(--text-light);
+            font-weight: normal;
+            margin-bottom: 20px; /* Reduced spacing */
+        }
+        
+        .two-columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* Reduced gap */
+            height: 75%; /* Control height */
+            overflow: hidden; /* Prevent overflow */
+        }
+        
+        .column {
+            flex: 1;
+            overflow: hidden; /* Prevent column overflow */
+        }
+        
+        .problem-box, .solution-box, .impact-box {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 10px; /* Reduced padding */
+            margin-bottom: 10px; /* Reduced margin */
+            border-radius: 4px;
+            transition: none; /* Removed animations that could cause overflow */
+            font-size: 0.9em; /* Smaller font */
+        }
+        
+        .solution-box {
+            background-color: var(--secondary-light);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .impact-box {
+            background-color: var(--accent-light);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        /* Remove hover effects that can cause overflow */
+        .problem-box:hover, .solution-box:hover, .diagram:hover {
+            transform: none;
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0; /* Remove extra spacing */
+            font-size: 0.9em; /* Smaller font */
+        }
+        
+        .feature-list li {
+            position: relative;
+            padding-left: 20px; /* Reduced padding */
+            margin-bottom: 8px; /* Reduced margin */
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .diagram {
+            max-width: 90%; /* Reduced size */
+            height: auto;
+            display: block;
+            margin: 10px auto; /* Reduced margin */
+            max-height: 50vh; /* Maximum height */
+            object-fit: contain; /* Ensure it fits */
+        }
+        
+        .feature-image {
+            width: 90%; /* Reduced width */
+            max-width: 250px; /* Smaller max width */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Reduced shadow */
+            display: block;
+            margin: 10px auto; /* Reduced margin */
+            max-height: 40vh; /* Maximum height */
+            object-fit: contain; /* Ensure it fits */
+        }
+        
+        .tech-box {
+            border: 1px solid var(--primary-light);
+            padding: 10px; /* Reduced padding */
+            border-radius: 8px;
+            margin-bottom: 10px; /* Reduced margin */
+        }
+        
+        .tech-box h3 {
+            margin-top: 0;
+            border-bottom: 1px solid var(--primary-light);
+            padding-bottom: 5px; /* Reduced padding */
+        }
+        
+        .tech-box ul {
+            margin: 5px 0; /* Reduced margin */
+            padding-left: 20px; /* Reduced padding */
+        }
+        
+        .tech-box li {
+            margin-bottom: 5px; /* Reduced margin */
+        }
+        
+        .next-steps-list {
+            margin-left: 15px; /* Reduced margin */
+            font-size: 0.9em; /* Smaller font */
+        }
+        
+        .next-steps-list li {
+            margin-bottom: 8px; /* Reduced margin */
+        }
+        
+        .contact-info {
+            text-align: center;
+            padding: 15px; /* Reduced padding */
+            background-color: var(--primary-light);
+            border-radius: 8px;
+            margin-top: 15px; /* Reduced margin */
+        }
+        
+        .contact-info p {
+            font-size: 1.1em; /* Smaller font */
+            margin-bottom: 3px; /* Reduced margin */
+        }
+        
+        .image-credit {
+            font-size: 0.6em; /* Smaller font */
+            color: var(--text-light);
+            text-align: right;
+            margin-top: 2px; /* Reduced margin */
+        }
+        
+        /* Simplified animations to reduce performance issues and overflow */
+        .fade-in, .slide-up, .slide-right {
+            animation: none; /* Disable animations */
+            opacity: 1; /* Ensure visibility */
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section class="title-slide" data-transition="zoom">
+                <h1 class="text-center">Senior-Student Volunteer Connection</h1>
+                <h2 class="text-center">Bridging Generations Through Service</h2>
+                <div class="text-center">
+                    <img src="/api/placeholder/600/400" alt="Senior and student volunteers" class="diagram" />
+                    <p class="image-credit">Image source: iStock</p>
+                </div>
+            </section>
+
+            <!-- Problem Statement -->
+            <section data-transition="fade">
+                <h2>Problem Statement</h2>
+                <div class="two-columns">
+                    <div class="column">
+                        <div>
+                            <div class="problem-box">
+                                <p><strong>Seniors</strong> often need assistance with daily tasks and chores</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="problem-box">
+                                <p><strong>High school students</strong> need volunteer hours for college applications</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="problem-box">
+                                <p><strong>Existing volunteer matching</strong> lacks efficiency and reliability</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="problem-box">
+                                <p><strong>Limited opportunities</strong> for intergenerational connections</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <img src="/api/placeholder/300/200" alt="Young person helping senior with groceries" class="feature-image" />
+                        <p class="image-credit">Image source: iStock</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Solution -->
+            <section data-transition="convex">
+                <h2>Our Solution</h2>
+                <div class="two-columns">
+                    <div class="column">
+                        <p>A web-based platform that:</p>
+                        <div>
+                            <div class="solution-box">
+                                <p>Connects high school students with seniors in their community</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="solution-box">
+                                <p>Facilitates task matching based on needs and capabilities</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="solution-box">
+                                <p>Provides reliable scheduling and verification</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="solution-box">
+                                <p>Creates meaningful intergenerational relationships</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <img src="/api/placeholder/300/200" alt="Young and senior volunteers working together" class="feature-image" />
+                        <p class="image-credit">Image source: iStock</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Journey Map -->
+            <section data-transition="fade-in">
+                <h2>User Journey Map</h2>
+                <img src="user-journey.svg" alt="User Journey Map" class="diagram" />
+                <p>Our platform provides a seamless experience from discovery to follow-up for both seniors and students.</p>
+            </section>
+
+            <!-- Registration Flow -->
+            <section data-transition="slide">
+                <h2>Registration and Account Flow</h2>
+                <img src="registration-flow.svg" alt="Registration Flow" class="diagram" />
+                <ol style="font-size: 0.9em; margin-top: 5px;">
+                    <li>Users register as either students or seniors</li>
+                    <li>Both create detailed profiles with relevant information</li>
+                    <li>Verification ensures safety and reliability</li>
+                </ol>
+            </section>
+
+            <!-- Task Flow -->
+            <section data-transition="convex">
+                <h2>Task Creation and Completion Flow</h2>
+                <img src="task-flow.svg" alt="Task Flow" class="diagram" />
+                <ol class="fade-in" style="animation-delay: 0.5s;">
+                    <li>Seniors post tasks they need help with</li>
+                    <li>Students browse and apply for tasks</li>
+                    <li>Seniors approve student applications</li>
+                    <li>Tasks are completed and verified</li>
+                    <li>Both parties provide feedback</li>
+                </ol>
+            </section>
+
+            <!-- Data Model -->
+            <section data-transition="zoom">
+                <h2>Data Model</h2>
+                <img src="data-model.svg" alt="Data Model" class="diagram" />
+                <p>Our application is built on a robust database schema that supports all user interactions.</p>
+            </section>
+
+            <!-- Features for Students -->
+            <section data-transition="slide">
+                <h2>Features for Students</h2>
+                <div class="two-columns">
+                    <div class="column">
+                        <ul class="feature-list">
+                            <li>Easy-to-use task discovery</li>
+                            <li>Flexible scheduling around school commitments</li>
+                            <li>Verified service hour tracking for college applications</li>
+                            <li>Feedback and ratings to build a strong volunteer record</li>
+                            <li>Opportunities to develop real-world skills and relationships</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <img src="/api/placeholder/300/200" alt="Student volunteer reading with senior" class="feature-image" />
+                        <p class="image-credit">Image source: Getty Images</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features for Seniors -->
+            <section data-transition="slide">
+                <h2>Features for Seniors</h2>
+                <div class="two-columns">
+                    <div class="column">
+                        <img src="/api/placeholder/300/200" alt="Senior volunteer" class="feature-image" />
+                        <p class="image-credit">Image source: iStock</p>
+                    </div>
+                    <div class="column">
+                        <ul class="feature-list">
+                            <li class="slide-right" style="animation-delay: 0.2s;">Simple interface to post help requests</li>
+                            <li class="slide-right" style="animation-delay: 0.4s;">Ability to review and select student volunteers</li>
+                            <li class="slide-right" style="animation-delay: 0.6s;">Reliable scheduling and communication tools</li>
+                            <li class="slide-right" style="animation-delay: 0.8s;">Feedback system to recognize helpful students</li>
+                            <li class="slide-right" style="animation-delay: 1s;">Meaningful social connections with younger generation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Architecture -->
+            <section data-transition="fade">
+                <h2>Technical Architecture</h2>
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="tech-box">
+                            <h3>Backend</h3>
+                            <ul>
+                                <li>FastAPI (Python)</li>
+                                <li>SQLite database</li>
+                                <li>SQLAlchemy ORM</li>
+                                <li>JWT authentication</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="tech-box">
+                            <h3>Frontend</h3>
+                            <ul>
+                                <li>React with hooks</li>
+                                <li>Context API for state management</li>
+                                <li>Mobile-responsive design</li>
+                                <li>Axios for API communication</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <img src="/api/placeholder/300/200" alt="Technology in learning" class="feature-image" style="margin: 10px auto;" />
+                <p class="image-credit">Image source: Getty Images</p>
+            </section>
+
+            <!-- Security & Trust -->
+            <section data-transition="convex">
+                <h2>Security & Trust</h2>
+                <div class="two-columns">
+                    <div class="column">
+                        <ul class="feature-list">
+                            <li>Comprehensive user verification</li>
+                            <li>Parent/guardian consent for student volunteers</li>
+                            <li>Emergency contact information</li>
+                            <li>In-app messaging for safe communication</li>
+                            <li>User rating and feedback system</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <img src="/api/placeholder/300/200" alt="Trust and caring" class="feature-image" />
+                        <p class="image-credit">Image source: iStock</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Impact -->
+            <section data-transition="zoom">
+                <h2>Impact</h2>
+                <div class="impact-box">
+                    <h3>For Students</h3>
+                    <p>Meaningful volunteer opportunities, skill development, community connections</p>
+                </div>
+                <div class="impact-box">
+                    <h3>For Seniors</h3>
+                    <p>Assistance with daily tasks, reduced isolation, intergenerational relationships</p>
+                </div>
+                <div class="impact-box">
+                    <h3>For Communities</h3>
+                    <p>Stronger social bonds, leveraging untapped volunteer potential</p>
+                </div>
+                <img src="/api/placeholder/300/200" alt="Community impact" class="feature-image" style="margin: 10px auto;" />
+                <p class="image-credit">Image source: Dreamstime</p>
+            </section>
+
+            <!-- Next Steps -->
+            <section data-transition="slide">
+                <h2>Next Steps</h2>
+                <div class="two-columns">
+                    <div class="column">
+                        <ul class="next-steps-list">
+                            <li>Beta testing with local high schools and senior centers</li>
+                            <li>Mobile app development</li>
+                            <li>Community partnerships</li>
+                            <li>Feature expansion based on user feedback</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <img src="/api/placeholder/300/200" alt="Planning next steps" class="feature-image" />
+                        <p class="image-credit">Image source: Getty Images</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Join the Movement -->
+            <section data-transition="convex">
+                <h2 class="text-center">Join the Movement</h2>
+                <p class="text-center" style="font-size: 1.1em;">Help us connect generations through service!</p>
+                
+                <div class="text-center">
+                    <img src="/api/placeholder/300/200" alt="Join our team" class="feature-image" style="margin: 10px auto;" />
+                    <p class="image-credit">Image source: iStock</p>
+                </div>
+                
+                <div class="contact-info">
+                    <p><strong>Contact:</strong> hello@senior-student-connect.org</p>
+                </div>
+            </section>
+
+            <!-- Thank You -->
+            <section data-transition="zoom" class="text-center">
+                <h1>Thank You</h1>
+                <img src="/api/placeholder/300/200" alt="Volunteer hands" class="feature-image" style="margin: 10px auto;" />
+                <p class="image-credit">Image source: Pixabay</p>
+                <p style="font-size: 1.3em;">Questions?</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: false,
+            hash: true,
+            transition: 'fade', // Simpler transition for better performance
+            width: '100%',
+            height: '100%',
+            margin: 0,
+            minScale: 0.5, // Allow more scaling for better fit
+            maxScale: 1.5,
+            // Disable animations for better performance and fit
+            autoPlayMedia: false,
+            // Learn about plugins: https://revealjs.com/plugins/
+            dependencies: []
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <style>
+    .box { fill: white; stroke: #4285f4; stroke-width: 2; rx: 10; ry: 10; }
+    .student-box { fill: #e8f0fe; stroke: #4285f4; stroke-width: 2; rx: 10; ry: 10; }
+    .senior-box { fill: #fef7e0; stroke: #fbbc04; stroke-width: 2; rx: 10; ry: 10; }
+    .stage-box { fill: #f8f9fa; stroke: #5f6368; stroke-width: 2; }
+    .arrow { stroke: #5f6368; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .text { font-family: Arial, sans-serif; font-size: 14px; fill: #202124; text-anchor: middle; }
+    .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #202124; text-anchor: middle; }
+    .subtitle { font-family: Arial, sans-serif; font-size: 18px; fill: #5f6368; text-anchor: middle; }
+    .stage-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #202124; text-anchor: middle; }
+    .header { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #202124; text-anchor: middle; }
+    .small-text { font-family: Arial, sans-serif; font-size: 11px; fill: #5f6368; text-anchor: middle; }
+  </style>
+  
+  <!-- Arrow Marker -->
+  <defs>
+    <marker
+      id="arrowhead"
+      markerWidth="10"
+      markerHeight="7"
+      refX="9"
+      refY="3.5"
+      orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5f6368" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="500" y="40" class="title">User Journey Map</text>
+  <text x="500" y="70" class="subtitle">Senior-Student Volunteer Connection</text>
+  
+  <!-- Stage Headers -->
+  <rect x="100" y="100" width="150" height="50" class="stage-box" />
+  <text x="175" y="130" class="stage-title">Discovery</text>
+  
+  <rect x="300" y="100" width="150" height="50" class="stage-box" />
+  <text x="375" y="130" class="stage-title">Registration</text>
+  
+  <rect x="500" y="100" width="150" height="50" class="stage-box" />
+  <text x="575" y="130" class="stage-title">Connection</text>
+  
+  <rect x="700" y="100" width="150" height="50" class="stage-box" />
+  <text x="775" y="130" class="stage-title">Service</text>
+  
+  <rect x="900" y="100" width="150" height="50" class="stage-box" />
+  <text x="975" y="130" class="stage-title">Follow-up</text>
+  
+  <!-- Role Headers -->
+  <text x="50" y="225" class="header">Senior</text>
+  <text x="50" y="425" class="header">Student</text>
+  
+  <!-- Senior Journey -->
+  <rect x="100" y="200" width="150" height="50" class="senior-box" />
+  <text x="175" y="220" class="text">Learns about platform</text>
+  <text x="175" y="240" class="small-text">Website, word of mouth</text>
+  
+  <rect x="300" y="200" width="150" height="50" class="senior-box" />
+  <text x="375" y="220" class="text">Creates account</text>
+  <text x="375" y="240" class="small-text">Profile, needs, availability</text>
+  
+  <rect x="500" y="200" width="150" height="50" class="senior-box" />
+  <text x="575" y="220" class="text">Posts task request</text>
+  <text x="575" y="240" class="small-text">Describes help needed</text>
+  
+  <rect x="700" y="200" width="150" height="50" class="senior-box" />
+  <text x="775" y="220" class="text">Receives assistance</text>
+  <text x="775" y="240" class="small-text">Student completes task</text>
+  
+  <rect x="900" y="200" width="150" height="50" class="senior-box" />
+  <text x="975" y="220" class="text">Provides feedback</text>
+  <text x="975" y="240" class="small-text">Rates student volunteer</text>
+  
+  <!-- Student Journey -->
+  <rect x="100" y="400" width="150" height="50" class="student-box" />
+  <text x="175" y="420" class="text">Seeks volunteer hours</text>
+  <text x="175" y="440" class="small-text">School, college requirements</text>
+  
+  <rect x="300" y="400" width="150" height="50" class="student-box" />
+  <text x="375" y="420" class="text">Creates account</text>
+  <text x="375" y="440" class="small-text">Skills, availability, consent</text>
+  
+  <rect x="500" y="400" width="150" height="50" class="student-box" />
+  <text x="575" y="420" class="text">Browses & applies</text>
+  <text x="575" y="440" class="small-text">Finds matching tasks</text>
+  
+  <rect x="700" y="400" width="150" height="50" class="student-box" />
+  <text x="775" y="420" class="text">Completes service</text>
+  <text x="775" y="440" class="small-text">Helps senior with task</text>
+  
+  <rect x="900" y="400" width="150" height="50" class="student-box" />
+  <text x="975" y="420" class="text">Logs service hours</text>
+  <text x="975" y="440" class="small-text">Earns ratings & reviews</text>
+  
+  <!-- Connecting Line -->
+  <line x1="0" y1="300" x2="1000" y2="300" stroke="#dadce0" stroke-width="2" stroke-dasharray="10,5" />
+  
+  <!-- System Interactions -->
+  <rect x="400" y="300" width="200" height="50" class="box" />
+  <text x="500" y="325" class="text">Task Matching System</text>
+  
+  <!-- Connection Arrows -->
+  <path d="M 175,250 L 175,300" class="arrow" />
+  <path d="M 375,250 L 375,300" class="arrow" />
+  <path d="M 575,250 L 575,300" class="arrow" />
+  <path d="M 775,250 L 775,300" class="arrow" />
+  <path d="M 975,250 L 975,300" class="arrow" />
+  
+  <path d="M 175,300 L 175,400" class="arrow" />
+  <path d="M 375,300 L 375,400" class="arrow" />
+  <path d="M 575,300 L 575,400" class="arrow" />
+  <path d="M 775,300 L 775,400" class="arrow" />
+  <path d="M 975,300 L 975,400" class="arrow" />
+  
+  <!-- Horizontal Arrows -->
+  <path d="M 250,225 L 300,225" class="arrow" />
+  <path d="M 450,225 L 500,225" class="arrow" />
+  <path d="M 650,225 L 700,225" class="arrow" />
+  <path d="M 850,225 L 900,225" class="arrow" />
+  
+  <path d="M 250,425 L 300,425" class="arrow" />
+  <path d="M 450,425 L 500,425" class="arrow" />
+  <path d="M 650,425 L 700,425" class="arrow" />
+  <path d="M 850,425 L 900,425" class="arrow" />
+</svg>

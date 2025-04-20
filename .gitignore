@@ -1,0 +1,87 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Test execution files
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.coverage.*
+coverage.xml
+*.cover
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Frontend build
+frontend/build/
+frontend/node_modules/
+
+# Frontend test files
+frontend/test-results/
+frontend/playwright-report/
+frontend/.playwright/
+frontend/coverage/
+frontend/reports/
+frontend/allure-results/
+frontend/allure-report/
+frontend/cypress/videos/
+frontend/cypress/screenshots/
+
+# Backend specific
+backend/.venv/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/app/**/__pycache__/
+backend/app/api/__pycache__/
+backend/app/api/api_v1/__pycache__/
+backend/app/api/api_v1/endpoints/__pycache__/
+backend/app/core/__pycache__/
+backend/app/crud/__pycache__/
+backend/app/db/__pycache__/
+backend/app/models/__pycache__/
+backend/app/schemas/__pycache__/
+

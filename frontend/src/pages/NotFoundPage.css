@@ -1,0 +1,50 @@
+.not-found-page {
+  padding: 80px 0;
+  text-align: center;
+  min-height: calc(100vh - 300px);
+  display: flex;
+  align-items: center;
+}
+
+.not-found-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.not-found-title {
+  font-size: 8rem;
+  color: var(--primary-color);
+  margin: 0;
+  line-height: 1;
+}
+
+.not-found-subtitle {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin: 0 0 20px;
+}
+
+.not-found-message {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .not-found-title {
+    font-size: 6rem;
+  }
+  
+  .not-found-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .not-found-message {
+    font-size: 1rem;
+  }
+}

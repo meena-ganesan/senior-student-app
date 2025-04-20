@@ -1,0 +1,87 @@
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo-student {
+  color: var(--primary-color);
+}
+
+.logo-senior {
+  color: var(--secondary-color);
+}
+
+.logo-connect {
+  color: var(--text-color);
+  margin-left: 5px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-left: 20px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.navbar-link:hover {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.register-btn {
+  background-color: var(--primary-color);
+  color: white !important;
+}
+
+.register-btn:hover {
+  background-color: #3d5a8c;
+  color: white !important;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+  }
+  
+  .navbar-logo {
+    margin-bottom: 15px;
+  }
+  
+  .navbar-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .navbar-link {
+    margin: 5px 10px;
+  }
+}

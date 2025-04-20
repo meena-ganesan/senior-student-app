@@ -1,0 +1,78 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <style>
+    .box { fill: white; stroke: #4285f4; stroke-width: 2; rx: 10; ry: 10; }
+    .student-box { fill: #e8f0fe; stroke: #4285f4; stroke-width: 2; rx: 10; ry: 10; }
+    .senior-box { fill: #fef7e0; stroke: #fbbc04; stroke-width: 2; rx: 10; ry: 10; }
+    .diamond { fill: #f8f9fa; stroke: #5f6368; stroke-width: 2; }
+    .arrow { stroke: #5f6368; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .text { font-family: Arial, sans-serif; font-size: 14px; fill: #202124; text-anchor: middle; }
+    .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #202124; text-anchor: middle; }
+    .subtitle { font-family: Arial, sans-serif; font-size: 18px; fill: #5f6368; text-anchor: middle; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; fill: #5f6368; }
+  </style>
+  
+  <!-- Arrow Marker -->
+  <defs>
+    <marker
+      id="arrowhead"
+      markerWidth="10"
+      markerHeight="7"
+      refX="9"
+      refY="3.5"
+      orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5f6368" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" class="title">Senior-Student Volunteer Connection</text>
+  <text x="400" y="70" class="subtitle">Registration and Scheduling Flow</text>
+  
+  <!-- Start -->
+  <rect x="350" y="100" width="100" height="50" class="box" />
+  <text x="400" y="130" class="text">Start</text>
+  
+  <!-- User Type Decision -->
+  <polygon points="400,180 450,230 400,280 350,230" class="diamond" />
+  <text x="400" y="235" class="text">User Type?</text>
+  
+  <!-- Student Path -->
+  <rect x="200" y="300" width="120" height="50" class="student-box" />
+  <text x="260" y="330" class="text">Student Signup</text>
+  
+  <rect x="200" y="380" width="120" height="50" class="student-box" />
+  <text x="260" y="410" class="text">Profile Creation</text>
+  
+  <rect x="200" y="460" width="120" height="50" class="student-box" />
+  <text x="260" y="490" class="text">Browse Tasks</text>
+  
+  <!-- Senior Path -->
+  <rect x="480" y="300" width="120" height="50" class="senior-box" />
+  <text x="540" y="330" class="text">Senior Signup</text>
+  
+  <rect x="480" y="380" width="120" height="50" class="senior-box" />
+  <text x="540" y="410" class="text">Profile Creation</text>
+  
+  <rect x="480" y="460" width="120" height="50" class="senior-box" />
+  <text x="540" y="490" class="text">Create Task</text>
+  
+  <!-- Connection -->
+  <rect x="350" y="520" width="100" height="50" class="box" />
+  <text x="400" y="550" class="text">Match</text>
+  
+  <!-- Arrows -->
+  <path d="M 400,150 L 400,180" class="arrow" />
+  <path d="M 350,230 L 260,300" class="arrow" />
+  <text x="290" y="250" class="label">Student</text>
+  <path d="M 450,230 L 540,300" class="arrow" />
+  <text x="510" y="250" class="label">Senior</text>
+  
+  <path d="M 260,350 L 260,380" class="arrow" />
+  <path d="M 260,430 L 260,460" class="arrow" />
+  <path d="M 260,510 L 350,545" class="arrow" />
+  
+  <path d="M 540,350 L 540,380" class="arrow" />
+  <path d="M 540,430 L 540,460" class="arrow" />
+  <path d="M 540,510 L 450,545" class="arrow" />
+</svg>

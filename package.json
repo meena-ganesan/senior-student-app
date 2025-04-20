@@ -1,0 +1,18 @@
+{
+  "name": "senior-student-app",
+  "version": "1.0.0",
+  "description": "Senior-Student Volunteer Connection Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && source .venv/bin/activate && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
